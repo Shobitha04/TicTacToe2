@@ -1,0 +1,169 @@
+body, html{
+    overflow-x: hidden;
+  }
+  
+  /* Container for the entire game */
+  .game-container {
+   min-width: 100vw;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+   background-color: #1a1a1a;
+   color: #ffffff;
+   padding: 2rem;
+  }
+  
+  /* Title styling */
+  .game-title {
+   font-size: 2.5rem;
+   color: #ffd700;
+   text-align: center;
+   margin-bottom: 2rem;
+   font-weight: bold;
+  }
+  
+  /* Flexbox container for the layout */
+  .game-layout {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   max-width: 800px;
+   gap: 2rem;
+  }
+  
+  /* Styling for player info cards */
+  .card {
+   background-color: #2a2a2a;
+   padding: 1rem;
+   border-radius: 0.5rem;
+   width: 200px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   text-align: center;
+  }
+  
+  /* Active player highlighting */
+  .player-info {
+   transition: color 0.3s ease;
+  }
+  
+  .player-info.active {
+   color: #ffd700;
+  }
+  
+  /* Player info label styling */
+  .player-label {
+   font-size: 1.125rem;
+   margin-bottom: 0.5rem;
+  }
+  
+  .player-symbol {
+   font-size: 1.5rem;
+   font-weight: bold;
+   margin-bottom: 0.5rem;
+  }
+  
+  .win-count {
+   font-size: 0.875rem;
+  }
+  
+  /* Container for the game board */
+  .game-board-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem;
+  }
+  
+  /* Game board styling */
+  .game-board {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 0.5rem;
+   background-color: #2a2a2a;
+   padding: 1rem;
+   border-radius: 0.5rem;
+  }
+  
+  /* Individual cell styling */
+  .board-cell {
+   width: 5rem;
+   height: 5rem;
+   background-color: #3a3a3a;
+   border: none;
+   border-radius: 0.25rem;
+   font-size: 1.875rem;
+   color: #ffffff;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.2s ease;
+  }
+  
+  /* Cell hover effect */
+  .board-cell:hover:not(.filled) {
+   background-color: #4a4a4a;
+   transform: scale(1.05);
+  }
+  
+  /* Winning cell animation */
+  .board-cell.winning {
+   background-color: #2e5a4a;
+   animation: pulse 1s infinite;
+  }
+  
+  /* Filled cells cursor change */
+  .board-cell.filled {
+   cursor: not-allowed;
+  }
+  
+  /* Status message styling */
+  .game-status {
+   text-align: center;
+  }
+  
+  .status-message {
+   font-size: 1.25rem;
+   color: #ffd700;
+   margin-bottom: 1rem;
+  }
+  
+  /* Buttons container styling */
+  .button-container {
+   display: flex;
+   gap: 1rem;
+   justify-content: center;
+  }
+  
+  .play-again-button,
+  .reset-button {
+   padding: 0.75rem 1.5rem;
+   font-size: 1rem;
+   color: #fff;
+   background-color: #ff4500;
+   border: none;
+   border-radius: 0.5rem;
+   cursor: pointer;
+   transition: background-color 0.3s;
+  }
+  
+  .play-again-button:hover,
+  .reset-button:hover {
+   background-color: #ff6347;
+  }
+  
+  /* Winning cell animation keyframes */
+  @keyframes pulse {
+   0% {
+     transform: scale(1);
+   }
+   50% {
+     transform: scale(1.1);
+   }
+   100% {
+     transform: scale(1);
+   }
+  }
